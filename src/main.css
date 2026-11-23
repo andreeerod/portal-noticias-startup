@@ -122,6 +122,16 @@ section h2 {
     --cor-fundo: #f3fbdc;
 }
 
+#entretenimento {
+    --cor: #7e22ce;
+    --cor-fundo: #f5ecff;
+}
+
+#tecnologia {
+    --cor: #c2410c;
+    --cor-fundo: #fff1e6;
+}
+
 /* ---------- Notícias ---------- */
 article {
     background-color: #fff;
