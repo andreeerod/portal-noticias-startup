@@ -1,0 +1,202 @@
+/* Tipografia: Geomanist (coloque Geomanist-Regular.woff2 e Geomanist-Bold.woff2 em ./fonts).
+   Sem os arquivos, o navegador usa a Outfit, geométrica e parecida. */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+@font-face {
+    font-family: "Geomanist";
+    src: local("Geomanist"), local("Geomanist Regular"),
+         url("./fonts/Geomanist-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Geomanist";
+    src: local("Geomanist Bold"),
+         url("./fonts/Geomanist-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Geomanist", "Outfit", Arial, sans-serif;
+    background-color: #f4f4f6;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* ---------- Cabeçalho do portal ---------- */
+body > header {
+    background-color: #0a0f1c;
+    color: #fff;
+    padding: 24px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+body > header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+nav a:hover {
+    background-color: #c4f53a;
+    color: #0a0f1c;
+}
+
+/* ---------- Seções (cada uma define a sua cor) ---------- */
+section {
+    --cor: #333;
+    --cor-fundo: #fff;
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 24px;
+    background-color: var(--cor-fundo);
+    border-top: 8px solid var(--cor);
+    border-radius: 8px;
+    border-bottom: 4px solid #c4f53a;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+section h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--cor);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#sports {
+    --cor: #1f8f3a;
+    --cor-fundo: #ecf8ef;
+}
+
+#economy {
+    --cor: #1d4fd8;
+    --cor-fundo: #eaf0ff;
+}
+
+#startups {
+    --cor: #2f6bff;
+    --cor-fundo: #e8efff;
+}
+
+#inovacao {
+    --cor: #5e9400;
+    --cor-fundo: #f3fbdc;
+}
+
+/* ---------- Notícias ---------- */
+article {
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+article header,
+article h3,
+article p,
+article > a {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+article time {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+article h3 {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    color: var(--cor);
+}
+
+article p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+article > a {
+    align-self: flex-start;
+    margin-top: auto;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: var(--cor);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article > a:hover {
+    filter: brightness(1.15);
+}
+
+/* ---------- Rodapé ---------- */
+body > footer {
+    background-color: #0a0f1c;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+}
+
+@media (max-width: 600px) {
+    body > header {
+        padding: 16px;
+    }
+
+    section {
+        margin: 16px 12px;
+        padding: 16px;
+    }
+}
